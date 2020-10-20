@@ -6,7 +6,7 @@ var price = (distanza * 0.21);//prezzo
 
 
 
-if (eta < 18 ) {
+if (eta > 65 ) {
   var finalprice = (price * 0.6);
   document.getElementById("ticket").innerHTML = "Il costo del tuo biglietto è di; " + finalprice + "euro";
 } else if (eta > 65){
