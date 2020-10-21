@@ -1,17 +1,56 @@
-var distanza = parseInt(prompt("Quanti Km devi percorrere"));//km
-var eta = parseInt(prompt("Quanti anni hai?"));//età
+var buttonGenera = document.getElementById("genera");
+buttonGenera.addEventListener('click',
+  function() {
+    var nomeUtente = document.getElementById('nome-utente');
+    var nome = nomeUtente.value;
+    console.log(nome);
 
-var price = (distanza * 0.21);//prezzo
+    var chilometriUtente = document.getElementById('chilometri-utente');
+    var kmDaPercorrere = chilometriUtente.value;
+    console.log(kmDaPercorrere);
+      // // eta del passeggero
+    var etaPasseggero = document.getElementById('eta-passeggero');
+    var fasciaEta = etaPasseggero.value;
+    console.log(fasciaEta);
+    // // prezzo totale del biglietto
+    var prezzoKm = 0.21;
+    var costoBiglietto = kmDaPercorrere * prezzoKm;
+    console.log(costoBiglietto);
+
+    var offerta = "Tariffa Standard"
 
 
+    // // condizioni sconto Biglietto
+    if (fasciaEta == "minorenne"){
+      //   // minorenne sconto del 20%
+      costoBiglietto -= (costoBiglietto * 20 / 100);
+      offerta = 'Sconto minorenne';
+      //   // over 65 anni di eta' sconto 40%
+    } else if (fasciaEta == "over65") {
+      costoBiglietto = costoBiglietto - (costoBiglietto * 40 / 100);
+      offerta = 'Sconto over 65';
+    }
+    var carrozza = Math.floor(Math.random() * 9) + 1;
+    var cp = Math.floor(Math.random() * (100000 - 90000 + 1) ) + 90000;
 
 
-if (eta > 65 ) {
-  var finalprice = (price * 0.6);
-  document.getElementById("ticket").innerHTML = "Il costo del tuo biglietto è di; " + finalprice + "euro";
-} else if (eta > 18){
-  var finalprice = (price * 0.8);
-  document.getElementById("ticket").innerHTML = "Il costo del tuo biglietto è di; " + finalprice + "euro";
-} else {
-  document.getElementById("ticket").innerHTML = "Non usufruisci di sconto, il tuo prezzo è di: " + price + "euro";
-}
+    document.getElementById('nome-passeggero').innerHTML = nome;
+    document.getElementById('offerta').innerHTML = offerta;
+    document.getElementById('costo').innerHTML = costoBiglietto.toFixed(2) + ' Euro';
+    document.getElementById('carrozza').innerHTML = carrozza;
+    document.getElementById('codice-cp').innerHTML = cp;
+
+    var bottonAnnulla = document.getElementById('sparisci');
+    bottonAnnulla.classList.remove('hidden');
+
+
+  }
+)
+var buttonAnnulla = document.getElementById("annulla");
+buttonAnnulla.addEventListener('click',
+function() {
+  var bottonAnnulla = document.getElementById('sparisci');
+  bottonAnnulla.classList.add('hidden');
+
+
+ } );

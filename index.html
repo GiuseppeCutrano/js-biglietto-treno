@@ -2,11 +2,86 @@
 <html lang="en" dir="ltr">
 	<head>
 		<meta charset="utf-8">
+    <link rel="stylesheet" href="css/style.css">
 		<title>Biglietto del treno</title>
 	</head>
-	<body>
-		<h2 id="ticket"></h2>
+  <body>
+
+    <h1 class="title">CALCOLA IL PREZZO DEL TUO BIGLIETTO</h1>
+   <div class="dati">
+     <div class="center_btn">
+
+       <div class="col">
+         <label for="">Nome Cognome</label>
+         <input class="dettagli" id="nome-utente" type="text" name="" value="" placeholder="Inserisci il tuo nome">
+       </div>
+
+       <div class="col">
+         <label>Km da percorrere </label>
+         <input class="dettagli" id="chilometri-utente" type="number" name="" value="" placeholder="Km da percorrere">
+
+       </div>
+       <div class="col">
+         <label for="">Fascia d'et&agrave;</label>
+         <select id="eta-passeggero" name="" value="">
+           <option value="minorenne">Minorenne</option>
+           <option value="maggiorenne">Maggiorenne</option>
+           <option value="over65">over 65</option>
+         </select>
+       </div>
+     </div>
+     <div class="center_btn">
+       <button id="genera" class="btn">Genera</button>
+       <button id="annulla" class="btn">Annulla</button>
+     </div>
+   </div>
+   <h2 class="title">IL TUO BIGLIETTO</h2>
+   <div class="biglietto" id="sparisci">
+     <div class="sottotitolo">
+       <h2 class="">DETTAGLIO PASSEGGERI</h2>
+     </div>
+
+     <div class="dettaglio-biglietto center_btn">
+       <div class="biglietto_left">
+         <h3>NOME PASSEGGERO</h3>
+         <h4 id="nome-passeggero"></h4>
+
+       </div>
+       <div class="biglietto_right">
+         <table>
+           <thead>
+             <tr>
+               <th>Offerta</th>
+               <th>Carrozza</th>
+               <th>Codice CP</th>
+               <th>Costo Biglietto</th>
+             </tr>
+           </thead>
+           <tbody>
+             <tr>
+               <td id="offerta">biglietto Standard</td>
+               <td id="carrozza"></td>
+               <td id="codice-cp"></td>
+               <td id="costo"></td>
+             </tr>
+           </tbody>
+         </table>
+
+       </div>
+       <!-- <div class="bottone_informazioni">
+         <div class="btn_informazioni">
+           <button class="btn_informazioni_bordo" type="button" name="button">Visualizza infomazioni sul sito</button>
+
+         </div>
+
+       </div> -->
+
+
+     </div>
+
+   </div>
 
     <!-- script -->
 		<script src="js/script.js" charset="utf-8"></script>
-	<l>
+</body>
+</html>
